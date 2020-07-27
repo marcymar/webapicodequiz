@@ -58,7 +58,7 @@ let questions = [
         "b. false",
     ]
 }
-
+]
 // <!-- submit button section-->
 
 // <!-- result/scoreboard section-->
