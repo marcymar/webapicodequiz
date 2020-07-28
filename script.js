@@ -1,13 +1,13 @@
 // questions
-let questions = [
+const questions = [
     {
-        "question": "What tag in HTML do you place the JavaScript?", 
-        "correctAnswer": "c. <script>",
-        "answers": [
+        question: "What tag in HTML do you place the JavaScript?",
+        correctAnswer: "c. <script>",
+        answers: [
             "a. <java>",
             "b. <jss>",
             "c. <script>",
-            "d. <javascript>" 
+            "d. <javascript>"
         ]
     },
     {
@@ -43,7 +43,7 @@ let questions = [
     {
         "question": "How do you start a FOR loop?",
         "correctAnswer": "a. for (i = 0; i <= 6; i++)",
-        "answer": [
+        "answers": [
             "a. for (i = 0; i <= 6; i++)",
             "b. for i = 1 to 6",
             "c. for (i <= 6; i++)",
@@ -53,28 +53,36 @@ let questions = [
     {
         "question": "JavaScript is the same as Java",
         "correctAnswer": "b. false",
-        "answer": [
+        "answers": [
             "a. true",
             "b. false",
         ]
     }
 ]
+const startButton = document.getElementById('beginQuiz')
+const questionElement = document.getElementById('question')
+const answerElement = document.getElementById('answerButtons')
+const nextButton = document.getElementById('next-btn')
 
-var score = 0;
+let currentIndex = 0
+let seconds = 150
+let score = 0
+let timer
 
-// question loop
-for(var i=0; i < questions.length; i++)
-    var response = questions [i].prompt);
-    if(response == questions[i].correctAnswer){
-        score++;
-        alert("Correct");
-    } else {
-        alert("Wrong");
-    }
+
+startButton.addEventListener('click', startQuiz)
+
+
+function startQuiz() {
+    startButton.classList.add('hide')
+    currentQuestionIndex = 0
+    questionElement.classList.remove('hide')
+    answerElement.classList.remove('hide')
+    nextButton.classList.remove('hide')
+
+    document.getElementById('question').textContent = questions[currentIndex].question
+
+
 }
-alert ("you got " + score + "/" + questions.length)
-
-// check user answer and correct answer
 
 
-// <!-- result/scoreboard section-->
