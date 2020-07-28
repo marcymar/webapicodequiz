@@ -64,7 +64,15 @@ var score = 0;
 
 // question loop
 for(var i=0; i < questions.length; i++)
-
+    var response = questions [i].prompt);
+    if(response == questions[i].correctAnswer){
+        score++;
+        alert("Correct");
+    } else {
+        alert("Wrong");
+    }
+}
+alert ("you got " + score + "/" + questions.length)
 
 // check user answer and correct answer
 
