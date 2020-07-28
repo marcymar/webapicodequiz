@@ -2,3 +2,46 @@
 box-sizing: border-box;
 font-family: 'Raleway', sans-serif;
 }
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(12, 172, 118, 0.473);
+}
+
+.jumbotron {
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 0 10px 2px;
+
+}
+
+.btn-answer {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 5px;
+    margin: 20px 0;
+    background-color: rgb(20, 129, 255);
+    border: 1px solid;
+    border-color: white;
+    color: white;
+}
+
+.btn:hover {
+    border-color: black;
+    box-shadow: 0 0 5px 1px;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hide {
+    display: none;
+}
