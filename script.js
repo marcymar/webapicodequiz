@@ -53,7 +53,7 @@ let questions = [
 ]
 
 let currentIndex = 0
-let seconds = 15
+let seconds = 150
 let score = 0
 let timer
 
@@ -191,7 +191,7 @@ document.addEventListener('click', event => {
         event.preventDefault()
         console.log('this submits the score and username hopefully')
         userScore({
-            username: document.getElementById('name').value,
+            name: document.getElementById('name').value,
             score: score
         })
     }
