@@ -35,7 +35,7 @@ let questions = [
         "correctAnswer": "c. if (i == 6)",
         "answers": [
             "a. if i == 6",
-            "b. if i == 6",
+            "b. if i = 6",
             "c. if (i == 6)",
             "d. if i == 6 then"
         ]
@@ -52,10 +52,10 @@ let questions = [
     },
     {
         "question": "JavaScript is the same as Java",
-        "correctAnswer": "b. false",
+        "correctAnswer": "b. no",
         "answers": [
-            "a. true",
-            "b. false",
+            "a. yes",
+            "b. no"
         ]
     }
 ]
@@ -65,7 +65,7 @@ let seconds = 150
 let score = 0
 let timer
 
-
+const nextButton = document.getElementById('nextButton')
 
 
 const nextQuestion = () => {
@@ -88,15 +88,29 @@ document.getElementById('beginQuiz').addEventListener('click', () => {
     nextQuestion()
 })
 
+
 document.addEventListener('click', event => {
     if (event.target.classList.contains('answer')) {
         console.log(event.target.dataset.answer)
         if (event.target.dataset.answer == questions[currentIndex].correctAnswer) {
             console.log('yeah man thats right')
+            let resultElem = document.createElement('div')
+            resultElem.className = 'alert alert-success'
+            resultElem.textContent = 'Thats Correct!'
+            document.getElementById('answers').append(resultElem)
         } else {
             console.log('nah dude thats wrong')
+            let resultElem = document.createElement('div')
+            resultElem.className = 'alert alert-danger'
+            resultElem.textContent = 'Sorry, thats wrong.'
+            document.getElementById('answers').append(resultElem)
         }
-        
+        nextButton.classList.remove('hide')
+
+        nextButton.addEventListener('click', () => {
+            currentIndex++
+            nextQuestion()
+        })
     }
 })
 

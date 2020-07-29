@@ -21,6 +21,7 @@ body {
 
 .btn {
     display: grid;
+    /* grid-template-columns: repeat(2); */
     gap: 5px;
     margin: 20px 0;
     border: 1px solid;
@@ -40,4 +41,8 @@ body {
 
 .hide {
     display: none;
+}
+
+#nextButton {
+    color: black
 }
