@@ -1,9 +1,9 @@
 // questions
-const questions = [
+let questions = [
     {
-        question: "What tag in HTML do you place the JavaScript?",
-        correctAnswer: "c. <script>",
-        answers: [
+        "question": "What tag in HTML do you place the JavaScript?",
+        "correctAnswer": "c. <script>",
+        "answers": [
             "a. <java>",
             "b. <jss>",
             "c. <script>",
@@ -59,10 +59,6 @@ const questions = [
         ]
     }
 ]
-const startButton = document.getElementById('beginQuiz')
-const questionElement = document.getElementById('question')
-const answerElement = document.getElementById('answerButtons')
-const nextButton = document.getElementById('next-btn')
 
 let currentIndex = 0
 let seconds = 150
@@ -70,19 +66,38 @@ let score = 0
 let timer
 
 
-startButton.addEventListener('click', startQuiz)
 
 
-function startQuiz() {
-    startButton.classList.add('hide')
-    currentQuestionIndex = 0
-    questionElement.classList.remove('hide')
-    answerElement.classList.remove('hide')
-    nextButton.classList.remove('hide')
-
+const nextQuestion = () => {
     document.getElementById('question').textContent = questions[currentIndex].question
 
+    let answers = questions[currentIndex].answers
 
+    document.getElementById('answers').innerHTML = ''
+
+    for (let i = 0; i < answers.length; i++) {
+        let answerElem = document.createElement('button')
+        answerElem.className = 'answer btn btn-info btn-lg'
+        answerElem.dataset.answer = answers[i]
+        answerElem.textContent = answers[i]
+        document.getElementById('answers').append(answerElem)
+    }
 }
+
+document.getElementById('beginQuiz').addEventListener('click', () => {
+    nextQuestion()
+})
+
+document.addEventListener('click', event => {
+    if (event.target.classList.contains('answer')) {
+        console.log(event.target.dataset.answer)
+        if (event.target.dataset.answer == questions[currentIndex].correctAnswer) {
+            console.log('yeah man thats right')
+        } else {
+            console.log('nah dude thats wrong')
+        }
+        
+    }
+})
 
 

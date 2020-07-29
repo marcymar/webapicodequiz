@@ -1,6 +1,6 @@
 *, *::before, *::after {
-box-sizing: border-box;
-font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -17,15 +17,12 @@ body {
 .jumbotron {
     background-color: rgb(247, 247, 247);
     box-shadow: 0 0 10px 2px;
-
 }
 
-.btn-answer {
+.btn {
     display: grid;
-    grid-template-columns: repeat(2, auto);
     gap: 5px;
     margin: 20px 0;
-    background-color: rgb(20, 129, 255);
     border: 1px solid;
     border-color: white;
     color: white;
@@ -39,7 +36,6 @@ body {
 .btn {
     justify-content: center;
     align-items: center;
-
 }
 
 .hide {
