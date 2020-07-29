@@ -167,7 +167,7 @@ const userScore = (formInput) => {
     document.getElementById('quiz').append(tableElem)
 }
 
-// quiz start button and timer
+// quiz start button and timer line 174 is giving me issues
 document.getElementById('beginQuiz').addEventListener('click', () => {
     timer = setInterval(() => {
         seconds--
